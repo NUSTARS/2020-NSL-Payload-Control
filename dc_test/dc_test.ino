@@ -1,10 +1,10 @@
-m0_speed = 7;
-m0_dir= 8; 
-m0_sleep = 9;
+int m0_speed = 5;
+int m0_dir= 6; 
+int m0_sleep = 7;
 
-m1_speed = 4; 
-m1_dir = 5; 
-m1_sleep = 6; 
+int m1_speed = 2; 
+int m1_dir = 3; 
+int m1_sleep = 4; 
 void setup() {
   pinMode(m0_speed,OUTPUT); 
   pinMode(m0_dir, OUTPUT); 
@@ -19,16 +19,25 @@ void setup() {
 void loop() {
   // Go forward
 
-  forwards(); 
-  delay(10000); 
+
+  digitalWrite(m0_sleep, HIGH);
+  digitalWrite(m0_dir, HIGH);
+  analogWrite(m0_speed, 255);
+  
+  //forwards(); 
+  //delay(10000); 
 
   //Coast
-  coast(); 
-  delay(1000); 
+  //coast(); 
+  //delay(1000); 
   //backwards
-  backwards(); 
+  //backwards(); 
 
 }
+
+
+
+
 
 void forwards(){ 
   digitalWrite(m0_sleep, LOW); 
